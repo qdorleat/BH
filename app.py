@@ -51,7 +51,7 @@ if uploaded_file is not None:
 
     df = process_csv(uploaded_file)
 
-    st.dataframe(df, use_container_width=True)
+    st.dataframe(df, hide_index=True, use_container_width=True)
 
     st.write(f"Nombre de personnes enregistrées : {len(df)}")
 
