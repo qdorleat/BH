@@ -7,8 +7,8 @@ from config import DEFAULT_EXPORT_DIR
 from services.csv_processor import process_csv
 from services.excel_exporter import export_to_excel
 from services.filename_generator import generate_filename
-from services.history_service import add_history_entry
-from services.mail_sender import send_email
+# from services.history_service import add_history_entry
+# from services.mail_sender import send_email
 
 st.set_page_config(
     page_title="CSV → XLSX Mailer",
