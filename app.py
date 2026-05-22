@@ -19,13 +19,13 @@ st.title("Génération du BH du jour")
 
 # st.sidebar.header("Configuration")
 
-# export_directory = st.sidebar.text_input(
-#     "Dossier d'export",
-#     value=str(DEFAULT_EXPORT_DIR)
-# )
+export_directory = st.sidebar.text_input(
+    "Dossier d'export",
+    value=str(DEFAULT_EXPORT_DIR)
+)
 
-# export_directory = Path(export_directory)
-# export_directory.mkdir(exist_ok=True)
+export_directory = Path(export_directory)
+export_directory.mkdir(exist_ok=True)
 
 uploaded_file = st.file_uploader(
     "Choisir un fichier CSV",
