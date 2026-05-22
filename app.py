@@ -73,44 +73,44 @@ if uploaded_file is not None:
             mime="application/vnd.openxmlformats-officedocument.spreadsheetml.sheet"
         )
 
-    st.subheader("Envoi Email")
+    # st.subheader("Envoi Email")
 
-    recipient = st.text_input(
-        "Destinataire",
-        value="quentin.dorleat@gmail.com"
-    )
+    # recipient = st.text_input(
+    #     "Destinataire",
+    #     value="quentin.dorleat@gmail.com"
+    # )
 
-    subject = st.text_input(
-        "Sujet",
-        value="Rapport automatique"
-    )
+    # subject = st.text_input(
+    #     "Sujet",
+    #     value="Rapport automatique"
+    # )
 
-    body = st.text_area(
-        "Corps du message",
-        value=(
-            "Bonjour,\n\n"
-            "Veuillez trouver le BH du jour pour la Maladaire en pièce jointe.\n\n"
-            "Cordialement"
-        )
-    )
+    # body = st.text_area(
+    #     "Corps du message",
+    #     value=(
+    #         "Bonjour,\n\n"
+    #         "Veuillez trouver le BH du jour pour la Maladaire en pièce jointe.\n\n"
+    #         "Cordialement"
+    #     )
+    # )
 
-    if st.button("Envoyer le mail"):
+    # if st.button("Envoyer le mail"):
 
-        try:
-            send_email(
-                recipient=recipient,
-                subject=subject,
-                body=body,
-                attachment_path=output_path
-            )
+    #     try:
+    #         send_email(
+    #             recipient=recipient,
+    #             subject=subject,
+    #             body=body,
+    #             attachment_path=output_path
+    #         )
 
-            add_history_entry(
-                recipient=recipient,
-                subject=subject,
-                file_path=output_path
-            )
+    #         add_history_entry(
+    #             recipient=recipient,
+    #             subject=subject,
+    #             file_path=output_path
+    #         )
 
-            st.success("Email envoyé avec succès")
+    #         st.success("Email envoyé avec succès")
 
-        except Exception as e:
-            st.error(f"Erreur : {e}")
+    #     except Exception as e:
+    #         st.error(f"Erreur : {e}")
