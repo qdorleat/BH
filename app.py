@@ -15,7 +15,7 @@ st.set_page_config(
     layout="wide"
 )
 
-st.title("Génération et envoi du BH du jour")
+st.title("Génération du BH du jour")
 
 st.sidebar.header("Configuration")
 
