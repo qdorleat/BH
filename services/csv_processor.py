@@ -59,7 +59,7 @@ def process_csv(uploaded_file):
     today_str = datetime.now().strftime("%d/%m/%Y")
 
     # 3. Keep only rows where 'Arriv�e' matches today's date
-    df_filtered = df[df["Arriv�e"] == today_str]
+    df_filtered = df[df["Arrivée"] == today_str]
 
     # 3. Rename the first column and overwrite all its row values
     df_filtered = df_filtered.rename(columns={df_filtered.columns[0]: "Etablissement"})
