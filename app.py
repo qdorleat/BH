@@ -49,7 +49,7 @@ if uploaded_file is not None:
 
     st.subheader("Prévisualisation du BH")
 
-    df = process_csv(uploaded_file)
+    df = process_csv(uploaded_file, date_match)
 
     st.dataframe(df, hide_index=True, use_container_width=True)
 
