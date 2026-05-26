@@ -53,8 +53,14 @@ def process_csv(uploaded_file):
     # 2. Remove row if it's a duplicate (keeps the first occurrence) (filter by firstname, name and date of birth)
     df = df.drop_duplicates(subset=[df.columns[1], df.columns[2], df.columns[3]], keep="first")
 
-    # 3. Rename the first column and overwrite all its row values
-    df = df.rename(columns={df.columns[0]: "Etablissement"})
-    df["Etablissement"] = "La Maladaire"
+    # Get today's date formatted as DD/MM/YYYY
+    today_str = datetime.now().strftime("%d/%m/%Y")
 
-    return df
+    # 3. Keep only rows where 'Arriv�e' matches today's date
+    df_filtered = df[df["Arriv�e"] == today_str]
+
+    # 3. Rename the first column and overwrite all its row values
+    df_filtered = df_filtered.rename(columns={df_filtered.columns[0]: "Etablissement"})
+    df_filtered["Etablissement"] = "La Maladaire"
+
+    return df_filtered
