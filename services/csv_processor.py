@@ -47,6 +47,21 @@ def process_csv(uploaded_file, date_match):
                      usecols=target_columns,
                      encoding='ISO-8859-1')
 
+    # Replace / by . in the dates
+    date_columns = [
+        "Date de naissance",
+        "Arrivée",
+        "Départ"
+    ]
+    
+    for col in date_columns:
+        if col in df.columns:
+            df[col] = pd.to_datetime(
+                df[col],
+                dayfirst=True,
+                errors="coerce"
+            )
+    
     # 1. Remove the last 2 rows
     df = df.iloc[:-2]
 
