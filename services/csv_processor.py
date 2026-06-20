@@ -60,7 +60,7 @@ def process_csv(uploaded_file, date_match):
                 df[col],
                 dayfirst=True,
                 errors="coerce"
-            )
+            ).dt.strftime("%d.%m.%Y")
     
     # 1. Remove the last 2 rows
     df = df.iloc[:-2]
