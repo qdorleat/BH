@@ -71,7 +71,7 @@ def process_csv(uploaded_file, date_match):
     if date_match:
         # 3. Keep only rows where 'Arrivée' matches today's date
         year, month, day = date_match.groups()
-        df_filtered = df[df["Arrivée"] == f"{day}/{month}/{year}" ]
+        df_filtered = df[df["Arrivée"] == f"{day}.{month}.{year}" ]
     else: 
         df_filtered = df
     
