@@ -47,6 +47,13 @@ def process_csv(uploaded_file, date_match):
                      usecols=target_columns,
                      encoding='ISO-8859-1')
 
+    # 0. Replace '/' by '.' in dates
+    df["Date"] = pd.to_datetime(
+        df["Date"],
+        dayfirst=True,
+        errors="coerce"
+    )
+    
     # 1. Remove the last 2 rows
     df = df.iloc[:-2]
 
