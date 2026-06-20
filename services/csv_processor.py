@@ -48,8 +48,18 @@ def process_csv(uploaded_file, date_match):
                      encoding='ISO-8859-1')
 
     # 0. Replace '/' by '.' in dates
-    df["Date"] = pd.to_datetime(
-        df["Date"],
+    df["Date de naissance"] = pd.to_datetime(
+        df["Date de naissance"],
+        dayfirst=True,
+        errors="coerce"
+    )
+    df["Arrivée"] = pd.to_datetime(
+        df["Arrivée"],
+        dayfirst=True,
+        errors="coerce"
+    )
+    df["Départ"] = pd.to_datetime(
+        df["Départ"],
         dayfirst=True,
         errors="coerce"
     )
